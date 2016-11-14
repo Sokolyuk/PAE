@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sda.controller.TableController">
+   <children>
+      <VBox layoutX="213.0" layoutY="110.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleOpenAction" text="Open" />
+                        <MenuItem fx:id="menuItemSaveAs" disable="true" mnemonicParsing="false" onAction="#handleSaveAsAction" text="Save as" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+						<MenuItem mnemonicParsing="false" onAction="#handleExitAction" text="Exit" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#handleAboutAction" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+               <VBox.margin>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </VBox.margin>
+            </MenuBar>
+            <ToolBar prefHeight="40.0" prefWidth="200.0">
+              <items>
+					<Button defaultButton="true" mnemonicParsing="false" onAction="#handleOpenAction" text="Open" />
+					<Button disable="true" mnemonicParsing="false" onAction="#handleAddRowAction" text="Add row" />
+                  <Button fx:id="deleteRow" disable="true" mnemonicParsing="false" onAction="#handleDeleteRowAction" text="Delete row" />
+                  <Button fx:id="clearData" disable="true" mnemonicParsing="false" onAction="#handleClearDataAction" text="Clear data" />
+              </items>
+               <VBox.margin>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </VBox.margin>
+            </ToolBar>
+            <TableView fx:id="tableview" editable="true" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </padding></TableView>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
